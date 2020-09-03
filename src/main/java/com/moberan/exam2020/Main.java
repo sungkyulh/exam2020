@@ -23,6 +23,13 @@ public class Main {
 			}
 		});
 
+		while(result[0]==null) { //firstTask의 쓰레드가 종료되고 secondTask가 호출될때까지 대기
+			try {
+				Thread.sleep(100L);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		// FIXME always null.
 		return result[0];
 	}
